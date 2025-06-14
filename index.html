@@ -152,7 +152,7 @@
                 <div class="max-w-xl mx-auto flex flex-col items-center text-center">
                     <!-- The ballot image is now part of the page content, but hidden -->
                     <div id="ballot-container" class="mb-8 p-4 bg-gray-100 rounded-lg" style="display: none;">
-                       <img id="ballot-image" src="https://i.ibb.co/6gR1s7B/Ballot-Paper-Filled-JVT.jpg" alt="Pre-filled Ballot Paper" class="max-w-full h-auto rounded-md shadow-lg" crossorigin="anonymous">
+                       <img id="ballot-image" src="image/Ballot_Paper_Filled_JVT.jpg" alt="Pre-filled Ballot Paper" class="max-w-full h-auto rounded-md shadow-lg">
                     </div>
 
 
@@ -197,7 +197,7 @@
 
             // Use html2canvas to capture the ballot element
             html2canvas(ballotElement, { 
-                useCORS: true, // Important for images from other domains
+                useCORS: true, // This may not be needed for same-origin images, but doesn't hurt.
                 logging: false //-disable-line
             }).then(canvas => {
                 // Hide the ballot element again
