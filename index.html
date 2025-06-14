@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for a Better JVT | Election 2025</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply the Poppins font to the entire page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8; /* A light, modern blue-gray */
+            scroll-behavior: smooth;
+        }
+
+        /* A more engaging animation for cards on hover */
+        .card-hover {
+            transition: all 0.4s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Gradient background for the header */
+        .header-gradient {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6, #8b5cf6);
+        }
+
+        /* Custom button styling */
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <header class="header-gradient text-white shadow-lg">
+        <div class="max-w-7xl mx-auto text-center py-20 px-6">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">Vote for a Better, Happier Society!</h1>
+            <p class="mt-6 max-w-4xl mx-auto text-lg md:text-xl text-blue-100">
+                Support our 11 fresh candidates to make JVT an ideal society for all—and end the anarchy of the current committee. Vote for vision, vote for change.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 -mt-16">
+        <div class="space-y-16">
+
+            <section id="candidates" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl card-hover">
+                <h2 class="text-4xl font-bold text-gray-900 border-b-4 border-blue-200 pb-4 mb-8">Our 11 Candidates</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6 text-gray-700">
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">Col AK Sinha (Retd) – A-801</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">JWO Jaipal Singh Mothsara (Retd) – G-201</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">JWO Manoj Kumar (Retd) – L-905</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">MCPO Nasib Singh (Retd) – J-704</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">CPO Pratap Singh (Retd) – H-101</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">Mrs. Priyanka Sharma – C-402</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">PO Rajkishore Mahto (Retd) – A-901</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">CPL Rameshwar Prasad Jat (Retd) – H-802</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">Sqn Ldr Saurabh Shekhawat (Retd) – F-303</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">MCPO Sube Singh Jat (Retd) – J-701</span></li>
+                    <li class="flex items-center space-x-4"><svg class="w-7 h-7 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-lg">POCDI Sukhveer Singh Shekhawat (Retd) – H-702</span></li>
+                </ul>
+            </section>
+
+            <section id="agenda" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl card-hover">
+                <h2 class="text-4xl font-bold text-gray-900 border-b-4 border-blue-200 pb-4 mb-8 text-center">Our Vision and Agenda: What We Stand For and Promise to Deliver</h2>
+                
+                <div class="space-y-12 mt-10">
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-700 mb-8 text-center">Amenities, Infrastructure & Environment</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🛋️</span><div><h3 class="font-semibold text-lg">Comfortable Visitor's Lounge</h3><p class="text-gray-600">At the main gate, with a water cooler.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🚗</span><div><h3 class="font-semibold text-lg">Organized Visitor Parking</h3><p class="text-gray-600">Safe, designated parking inside the campus.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🌳</span><div><h3 class="font-semibold text-lg">More Greenery</h3><p class="text-gray-600">With regular plantation drives and proper maintenance.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🚰</span><div><h3 class="font-semibold text-lg">Reliable Freshwater Supply</h3><p class="text-gray-600">Present a clear plan for securing supply from the Municipal Corporation.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">💧</span><div><h3 class="font-semibold text-lg">24/7 Water Supply</h3><p class="text-gray-600">Activate all borewells and convert to a hybrid solar/electric system.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🛣️</span><div><h3 class="font-semibold text-lg">Better Road Connectivity</h3><p class="text-gray-600">Engage with authorities to widen and decongest the approach road.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">💡</span><div><h3 class="font-semibold text-lg">Independent Electrical Connection</h3><p class="text-gray-600">Explore options for residential connections, enabling individual meters and subsidized rates.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🔋</span><div><h3 class="font-semibold text-lg">Generator Backup</h3><p class="text-gray-600">For lifts & common areas, while exploring solar options and supply to residents.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🏋️‍♀️</span><div><h3 class="font-semibold text-lg">Equipped Gym & Yoga Hall</h3><p class="text-gray-600">For a healthy and active lifestyle for all residents.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🏊</span><div><h3 class="font-semibold text-lg">Operational Swimming Pool</h3><p class="text-gray-600">Open to all residents including tenants with a strong maintenance plan.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🎲</span><div><h3 class="font-semibold text-lg">Indoor Games & Activities</h3><p class="text-gray-600">For children, women, and senior citizens.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🛠️</span><div><h3 class="font-semibold text-lg">Functional STP</h3><p class="text-gray-600">Timely resolution of all operational issues to ensure hygiene and environmental compliance.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🗑️</span><div><h3 class="font-semibold text-lg">Better Solid Waste Management</h3><p class="text-gray-600">Relocate the dumping location and explore vermicomposting.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🚭</span><div><h3 class="font-semibold text-lg">No Waste Burning</h3><p class="text-gray-600">Zero-tolerance policy for burning garbage to maintain air quality and health.</p></div></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-700 mb-8 text-center">Safety & Security</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🛡️</span><div><h3 class="font-semibold text-lg">Strengthened Security For All</h3><p class="text-gray-600">Periodic training for security staff and system upgrades (CCTV, Visitor Apps).</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🚧</span><div><h3 class="font-semibold text-lg">Enhanced Perimeter Security</h3><p class="text-gray-600">Install Y-angle brackets and barbed wire on boundary walls.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">📱</span><div><h3 class="font-semibold text-lg">App-Based Society Management</h3><p class="text-gray-600">Explore apps like MyGate for access control and complaint resolution.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🚪</span><div><h3 class="font-semibold text-lg">Smooth & Secure Main Gate</h3><p class="text-gray-600">Efficient and safe entry for residents and visitors.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🔥</span><div><h3 class="font-semibold text-lg">Fire & Lift Safety</h3><p class="text-gray-600">Technical reviews, regular drills, and auto fire safety balls in server rooms.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🏃</span><div><h3 class="font-semibold text-lg">Clear Evacuation Plans</h3><p class="text-gray-600">Visible plans and drills for emergency preparedness.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🤸</span><div><h3 class="font-semibold text-lg">Safer Children's Play Area</h3><p class="text-gray-600">Install fencing along the park path to protect children from vehicle traffic.</p></div></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-3xl font-bold text-blue-700 mb-8 text-center">Transparency, Fairness & Community</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">📢</span><div><h3 class="font-semibold text-lg">Transparent Communication</h3><p class="text-gray-600">Regular updates on society matters via digital notice boards & official WhatsApp groups.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">💻</span><div><h3 class="font-semibold text-lg">Online Meeting Access</h3><p class="text-gray-600">Allow members to join important meetings via MS Teams or Zoom or Google platform.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">📝</span><div><h3 class="font-semibold text-lg">Resident Participation</h3><p class="text-gray-600">Use online surveys to get views on new initiatives and form resident committees.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🤫</span><div><h3 class="font-semibold text-lg">Respect for Privacy</h3><p class="text-gray-600">MC will not intervene in personal choices within legal/community norms.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🏡</span><div><h3 class="font-semibold text-lg">Resident Autonomy</h3><p class="text-gray-600">Freedom to install balcony screens/grills that don't affect building structure.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">⚖️</span><div><h3 class="font-semibold text-lg">Review of By-laws</h3><p class="text-gray-600">Amend rules to ensure they are fair and provide equal rights to everyone.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🤝</span><div><h3 class="font-semibold text-lg">End Unfair Policies</h3><p class="text-gray-600">Provide equal rights to tenants to access all amenities and services.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">⏰</span><div><h3 class="font-semibold text-lg">Flexible Interior Work Hours</h3><p class="text-gray-600">Extend timings to provide more flexibility for flat improvements.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🚺</span><div><h3 class="font-semibold text-lg">Female Conservancy Staff</h3><p class="text-gray-600">Prioritize hiring of female staff for roles interacting with families.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">📋</span><div><h3 class="font-semibold text-lg">Clear Roles & Responsibilities</h3><p class="text-gray-600">For all society staff to improve accountability and service quality.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🧾</span><div><h3 class="font-semibold text-lg">Financial Prudence</h3><p class="text-gray-600">Clear, audited accounting with timely budgeting and cost-saving measures.</p></div></li>
+                            <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🕊️</span><div><h3 class="font-semibold text-lg">Peaceful & Harmonious Living</h3><p class="text-gray-600">Promote unity through cultural and social events for a proud community.</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === MODIFIED VOTE SECTION START === -->
+            <section id="vote" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl card-hover">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Cast Your Vote in One Easy Step!</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">
+                        No downloads needed! Simply click the button below. This will open your email client with everything ready to go, including the ballot image in the body of the email.
+                    </p>
+                </div>
+
+                <div class="max-w-xl mx-auto flex flex-col items-center text-center">
+                    <!-- The ballot image is now part of the page content, but hidden -->
+                    <div id="ballot-container" class="mb-8 p-4 bg-gray-100 rounded-lg" style="display: none;">
+                       <img id="ballot-image" src="https://i.ibb.co/6gR1s7B/Ballot-Paper-Filled-JVT.jpg" alt="Pre-filled Ballot Paper" class="max-w-full h-auto rounded-md shadow-lg" crossorigin="anonymous">
+                    </div>
+
+
+                    <button id="email-ballot-btn" class="w-full max-w-md text-center inline-flex items-center justify-center btn-primary">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Email Your Ballot
+                    </button>
+                    
+                    <p id="loading-message" class="text-gray-600 mt-4" style="display: none;">Preparing your email...</p>
+
+                </div>
+            </section>
+            <!-- === MODIFIED VOTE SECTION END === -->
+
+        </div>
+    </main>
+
+    <footer class="text-center py-12 mt-16 bg-gray-100 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-2xl font-bold text-blue-700">“Vote Today, Shape Tomorrow”</h3>
+            <p class="text-gray-600 mt-3 text-lg">Rights Come with Responsibility - Use Your Vote!</p>
+            <p class="text-gray-800 font-semibold mt-5 text-xl">Support us: Let’s build a Community We’re Proud Of!</p>
+            <p class="text-md text-gray-500 mt-8">Thank you for your trust and support! 🙏</p>
+        </div>
+    </footer>
+
+    <script>
+        // This script uses the html2canvas library to convert the ballot image into a data URL
+        // and embed it directly into the body of a mailto link. This is the most reliable
+        // way to "attach" an image without a server.
+        document.getElementById('email-ballot-btn').addEventListener('click', function() {
+            const emailButton = this;
+            const loadingMessage = document.getElementById('loading-message');
+            
+            // Show loading state
+            emailButton.disabled = true;
+            loadingMessage.style.display = 'block';
+
+            const ballotElement = document.getElementById('ballot-container');
+            // Temporarily show the ballot element to be captured by html2canvas
+            ballotElement.style.display = 'block';
+
+            // Use html2canvas to capture the ballot element
+            html2canvas(ballotElement, { 
+                useCORS: true, // Important for images from other domains
+                logging: false //-disable-line
+            }).then(canvas => {
+                // Hide the ballot element again
+                ballotElement.style.display = 'none';
+
+                // Convert the canvas to a Base64 image data URL
+                const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+
+                // Prepare the email body with the embedded image
+                const emailTo = 'rwa2jpronlinevote@gmail.com';
+                const emailSubject = 'JVT Election Vote - Ballot';
+                const emailBody = `
+Dear JVT Election Team,
+
+Please find my completed ballot below for the JVTA Election 2025.
+
+<br><br>
+<img src="${imageDataUrl}" alt="Ballot Paper">
+<br><br>
+
+Best regards,
+<br>
+[Your Name and Flat Number]
+`;
+
+                // Create the mailto link
+                // We use encodeURIComponent for the body to handle special characters
+                const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+                // Open the user's default email client
+                window.location.href = mailtoLink;
+
+                // Re-enable the button
+                emailButton.disabled = false;
+                loadingMessage.style.display = 'none';
+
+            }).catch(error => {
+                console.error('Error generating ballot image:', error);
+                // Re-enable the button and hide loading message on error
+                emailButton.disabled = false;
+                loadingMessage.style.display = 'none';
+                alert('Could not generate the ballot image. Please try again or contact support.');
+            });
+        });
+    </script>
+
+</body>
+</html>
