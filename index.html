@@ -6,8 +6,6 @@
     <title>Vote for a Better JVT | Election 2025</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +52,7 @@
 </head>
 <body class="text-gray-800 antialiased">
 
+    <!-- Header Section -->
     <header class="header-gradient text-white shadow-lg">
         <div class="max-w-7xl mx-auto text-center py-20 px-6">
             <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">Vote for a Better, Happier Society!</h1>
@@ -66,6 +65,7 @@
     <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 -mt-16">
         <div class="space-y-16">
 
+            <!-- Candidates Section -->
             <section id="candidates" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl card-hover">
                 <h2 class="text-4xl font-bold text-gray-900 border-b-4 border-blue-200 pb-4 mb-8">Our 11 Candidates</h2>
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6 text-gray-700">
@@ -83,6 +83,7 @@
                 </ul>
             </section>
 
+            <!-- Agenda Section -->
             <section id="agenda" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl card-hover">
                 <h2 class="text-4xl font-bold text-gray-900 border-b-4 border-blue-200 pb-4 mb-8 text-center">Our Vision and Agenda: What We Stand For and Promise to Deliver</h2>
                 
@@ -137,39 +138,56 @@
                             <li class="flex items-start space-x-4"><span class="text-3xl mt-1">🕊️</span><div><h3 class="font-semibold text-lg">Peaceful & Harmonious Living</h3><p class="text-gray-600">Promote unity through cultural and social events for a proud community.</p></div></li>
                         </ul>
                     </div>
+
                 </div>
             </section>
 
-            <!-- === MODIFIED VOTE SECTION START === -->
-            <section id="vote" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl card-hover">
-                <div class="text-center">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Cast Your Vote in One Easy Step!</h2>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">
-                        No downloads needed! Simply click the button below. This will open your email client with everything ready to go, including the ballot image in the body of the email.
-                    </p>
-                </div>
-
-                <div class="max-w-xl mx-auto flex flex-col items-center text-center">
-                    <!-- The ballot image is now part of the page content, but hidden. Its 'src' points to the local repository path. -->
-                    <div id="ballot-container" class="mb-8 p-4 bg-gray-100 rounded-lg" style="display: none;">
-                       <img id="ballot-image" src="image/Ballot_Paper_Filled_JVT.jpg" alt="Pre-filled Ballot Paper" class="max-w-full h-auto rounded-md shadow-lg">
-                    </div>
-
-
-                    <button id="email-ballot-btn" class="w-full max-w-md text-center inline-flex items-center justify-center btn-primary">
-                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        Email Your Ballot
-                    </button>
+            <!-- Voting Section -->
+            <section id="vote" class="bg-blue-50 p-6 sm:p-8 rounded-2xl border-2 border-blue-200">
+                <h2 class="text-4xl font-bold text-gray-900 text-center mb-10">Vote in 2 Simple Steps</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     
-                    <p id="loading-message" class="text-gray-600 mt-4" style="display: none;">Preparing your email...</p>
+                    <!-- Step 1: Download Ballot -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center card-hover">
+                        <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Download Pre-Filled Ballot</h3>
+                        <p class="text-gray-600 mb-8">Click below to get the ballot image with our 11 candidates pre-ticked for your convenience.</p>
+                        <a 
+                            href="image/Ballot_Paper_Filled_JVT.jpg" 
+                            download="Ballot_Paper_Filled_JVT.jpg" 
+                            class="w-full text-center inline-flex items-center justify-center btn-primary"
+                        >
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Download Ballot
+                        </a>
+                    </div>
+                    
+                    <!-- Step 2: Email Vote with Highlighted Warning -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-red-400 flex flex-col items-center text-center card-hover">
+                        <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Email Your Vote</h3>
+                        <p class="text-gray-600 mb-4">Click the button below to open your email app. The address and subject will be ready for you.</p>
 
+                        <!-- NEW: Highlighted reminder to attach the ballot -->
+                        <div class="w-full mt-2 mb-6 p-3 bg-red-100 border-l-4 border-red-500 text-red-800 rounded-r-lg animate-pulse">
+                            <p class="font-bold text-left flex items-center">
+                                <svg class="inline-block w-8 h-8 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.03-1.742 3.03H4.42c-1.532 0-2.492-1.696-1.742-3.03l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                <span class="leading-tight">Most Important: Please attach the ballot image before sending!</span>
+                            </p>
+                        </div>
+
+                        <a href="mailto:rwa2jpronlinevote@gmail.com?subject=JVT%20Election%20Vote%20-%20Ballot&body=Dear%20JVT%20Election%20Team%2C%0A%0APlease%20find%20attached%20my%20completed%20ballot%20for%20the%20JVTA%20Election%202025.%0A%0A%0A%0ABest%20regards%2C%0A" class="w-full text-center inline-flex items-center justify-center btn-primary">
+                           <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Email Your Ballot
+                        </a>
+                    </div>
                 </div>
             </section>
-            <!-- === MODIFIED VOTE SECTION END === -->
 
         </div>
     </main>
 
+    <!-- Footer Section -->
     <footer class="text-center py-12 mt-16 bg-gray-100 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
             <h3 class="text-2xl font-bold text-blue-700">“Vote Today, Shape Tomorrow”</h3>
@@ -178,90 +196,6 @@
             <p class="text-md text-gray-500 mt-8">Thank you for your trust and support! 🙏</p>
         </div>
     </footer>
-
-    <script>
-        // This script uses the html2canvas library to convert the ballot image into a data URL
-        // and embed it directly into the body of a mailto link.
-        document.getElementById('email-ballot-btn').addEventListener('click', function() {
-            const emailButton = this;
-            const loadingMessage = document.getElementById('loading-message');
-            const ballotElement = document.getElementById('ballot-container');
-            const ballotImage = document.getElementById('ballot-image');
-
-            // --- Function to capture the element and generate the email ---
-            const captureAndEmail = () => {
-                // Temporarily show the ballot element to be captured by html2canvas
-                ballotElement.style.display = 'block';
-
-                html2canvas(ballotElement, { 
-                    // This option helps with loading images from the same domain in some cases.
-                    useCORS: true, 
-                    logging: false 
-                }).then(canvas => {
-                    // Hide the ballot element again
-                    ballotElement.style.display = 'none';
-
-                    // Convert the canvas to a Base64 image data URL
-                    const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9);
-
-                    // Prepare the email body with the embedded image
-                    const emailTo = 'rwa2jpronlinevote@gmail.com';
-                    const emailSubject = 'JVT Election Vote - Ballot';
-                    const emailBody = `
-Dear JVT Election Team,
-
-Please find my completed ballot below for the JVTA Election 2025.
-
-<br><br>
-<img src="${imageDataUrl}" alt="Ballot Paper">
-<br><br>
-
-Best regards,
-<br>
-[Your Name and Flat Number]
-`;
-                    // Create the mailto link, ensuring the body is properly encoded
-                    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-
-                    // Open the user's default email client
-                    window.location.href = mailtoLink;
-
-                    // Re-enable the button and hide loading message
-                    emailButton.disabled = false;
-                    loadingMessage.style.display = 'none';
-
-                }).catch(error => {
-                    console.error('Error generating ballot image:', error);
-                    // Re-enable the button and hide loading message on error
-                    emailButton.disabled = false;
-                    loadingMessage.style.display = 'none';
-                    alert('Could not generate the ballot image. Please try again or contact support.');
-                });
-            };
-
-            // --- Main logic ---
-            // Show loading state
-            emailButton.disabled = true;
-            loadingMessage.style.display = 'block';
-
-            // This ensures the image is fully loaded before we try to capture it.
-            // It checks if the image is already downloaded and cached.
-            if (ballotImage.complete && ballotImage.naturalHeight !== 0) {
-                // If loaded, capture immediately.
-                captureAndEmail();
-            } else {
-                // If not loaded, wait for the 'onload' event before capturing.
-                ballotImage.onload = captureAndEmail;
-                // Add an error handler in case the image fails to load
-                ballotImage.onerror = () => {
-                    console.error('Error loading ballot image for canvas capture.');
-                    alert('Could not load the ballot image. Please check the image path and try again.');
-                    emailButton.disabled = false;
-                    loadingMessage.style.display = 'none';
-                };
-            }
-        });
-    </script>
 
 </body>
 </html>
