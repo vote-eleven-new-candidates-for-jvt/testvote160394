@@ -150,7 +150,7 @@
                 </div>
 
                 <div class="max-w-xl mx-auto flex flex-col items-center text-center">
-                    <!-- The ballot image is now part of the page content, but hidden -->
+                    <!-- The ballot image is now part of the page content, but hidden. Its 'src' points to the local repository path. -->
                     <div id="ballot-container" class="mb-8 p-4 bg-gray-100 rounded-lg" style="display: none;">
                        <img id="ballot-image" src="image/Ballot_Paper_Filled_JVT.jpg" alt="Pre-filled Ballot Paper" class="max-w-full h-auto rounded-md shadow-lg">
                     </div>
@@ -181,35 +181,33 @@
 
     <script>
         // This script uses the html2canvas library to convert the ballot image into a data URL
-        // and embed it directly into the body of a mailto link. This is the most reliable
-        // way to "attach" an image without a server.
+        // and embed it directly into the body of a mailto link.
         document.getElementById('email-ballot-btn').addEventListener('click', function() {
             const emailButton = this;
             const loadingMessage = document.getElementById('loading-message');
-            
-            // Show loading state
-            emailButton.disabled = true;
-            loadingMessage.style.display = 'block';
-
             const ballotElement = document.getElementById('ballot-container');
-            // Temporarily show the ballot element to be captured by html2canvas
-            ballotElement.style.display = 'block';
+            const ballotImage = document.getElementById('ballot-image');
 
-            // Use html2canvas to capture the ballot element
-            html2canvas(ballotElement, { 
-                useCORS: true, // This may not be needed for same-origin images, but doesn't hurt.
-                logging: false //-disable-line
-            }).then(canvas => {
-                // Hide the ballot element again
-                ballotElement.style.display = 'none';
+            // --- Function to capture the element and generate the email ---
+            const captureAndEmail = () => {
+                // Temporarily show the ballot element to be captured by html2canvas
+                ballotElement.style.display = 'block';
 
-                // Convert the canvas to a Base64 image data URL
-                const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+                html2canvas(ballotElement, { 
+                    // This option helps with loading images from the same domain in some cases.
+                    useCORS: true, 
+                    logging: false 
+                }).then(canvas => {
+                    // Hide the ballot element again
+                    ballotElement.style.display = 'none';
 
-                // Prepare the email body with the embedded image
-                const emailTo = 'rwa2jpronlinevote@gmail.com';
-                const emailSubject = 'JVT Election Vote - Ballot';
-                const emailBody = `
+                    // Convert the canvas to a Base64 image data URL
+                    const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+
+                    // Prepare the email body with the embedded image
+                    const emailTo = 'rwa2jpronlinevote@gmail.com';
+                    const emailSubject = 'JVT Election Vote - Ballot';
+                    const emailBody = `
 Dear JVT Election Team,
 
 Please find my completed ballot below for the JVTA Election 2025.
@@ -222,25 +220,46 @@ Best regards,
 <br>
 [Your Name and Flat Number]
 `;
+                    // Create the mailto link, ensuring the body is properly encoded
+                    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
-                // Create the mailto link
-                // We use encodeURIComponent for the body to handle special characters
-                const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                    // Open the user's default email client
+                    window.location.href = mailtoLink;
 
-                // Open the user's default email client
-                window.location.href = mailtoLink;
+                    // Re-enable the button and hide loading message
+                    emailButton.disabled = false;
+                    loadingMessage.style.display = 'none';
 
-                // Re-enable the button
-                emailButton.disabled = false;
-                loadingMessage.style.display = 'none';
+                }).catch(error => {
+                    console.error('Error generating ballot image:', error);
+                    // Re-enable the button and hide loading message on error
+                    emailButton.disabled = false;
+                    loadingMessage.style.display = 'none';
+                    alert('Could not generate the ballot image. Please try again or contact support.');
+                });
+            };
 
-            }).catch(error => {
-                console.error('Error generating ballot image:', error);
-                // Re-enable the button and hide loading message on error
-                emailButton.disabled = false;
-                loadingMessage.style.display = 'none';
-                alert('Could not generate the ballot image. Please try again or contact support.');
-            });
+            // --- Main logic ---
+            // Show loading state
+            emailButton.disabled = true;
+            loadingMessage.style.display = 'block';
+
+            // This ensures the image is fully loaded before we try to capture it.
+            // It checks if the image is already downloaded and cached.
+            if (ballotImage.complete && ballotImage.naturalHeight !== 0) {
+                // If loaded, capture immediately.
+                captureAndEmail();
+            } else {
+                // If not loaded, wait for the 'onload' event before capturing.
+                ballotImage.onload = captureAndEmail;
+                // Add an error handler in case the image fails to load
+                ballotImage.onerror = () => {
+                    console.error('Error loading ballot image for canvas capture.');
+                    alert('Could not load the ballot image. Please check the image path and try again.');
+                    emailButton.disabled = false;
+                    loadingMessage.style.display = 'none';
+                };
+            }
         });
     </script>
 
